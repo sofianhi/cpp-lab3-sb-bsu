@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 int main()
 {
@@ -10,8 +11,12 @@ break;
 }
 do {
 cout << "Enter integer nr. " << i << ": ";
-cin >> number;
+if (cin >> number) {
 sum_k += number; i++;
+} else {
+cout << "Invalid input. Please enter an integer." << endl;
+cin.clear();
+}
 } while (i <= k);
 cout << " The total sum of " << k << " integers is: " << sum_k;
 return 0;
